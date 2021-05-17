@@ -1,6 +1,7 @@
 import unreal
 import json
 import os
+import re
 
 
 def export_fbx(map_asset_path, sequencer_asset_path, output_file):
@@ -52,6 +53,7 @@ if __name__ == "__main__":
                         if channel:
                             value_list = []
                             name = channel.get_name()
+                            print("channel name is {}".format(name))
                             # frame_index = key.get_time().frame_number.value
                             # time = key.get_time().sub_frame 
                             keys = channel.get_keys()
@@ -64,7 +66,7 @@ if __name__ == "__main__":
                                 qua_time= unreal.QualifiedTime(frame=key.get_time().frame_number, frame_rate=sequence.get_display_rate(), sub_frame=key.get_time().sub_frame)
                                 value = {"frameNumber":"{}".format(key.get_time().frame_number.value + key.get_time().sub_frame), "time": "{}".format(unreal.TimeManagementLibrary.conv_qualified_frame_time_to_seconds(qua_time)), "value":key.get_value()}
                                 value_list.append(value)
-                            export_dict[name] = value_list
+                            export_dict[re.sub(r"_[\d]+$", "", name)] = value_list
                     write_json(os.path.join(output_file, "{}_{}.json".format(track.get_name(), section.get_name())), export_dict)
     
     
