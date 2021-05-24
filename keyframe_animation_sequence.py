@@ -40,7 +40,7 @@ if __name__ == "__main__":
     root_path = r"E:\project_N\xiaobai\project_test\1"
     curve_names_path = os.path.join(root_path, "pose_name_aifa.pkl")
     weights_path = os.path.join(root_path, "arkit_weights.pkl")
-    animation_path = r"/Game/N_pv_test/lqc_smooth_1/lqc_smooth_1_modify_curve_drive.lqc_smooth_1_modify_curve_drive"
+    animation_path = r"/Game/lqc_smooth_1_modify_curve_drive.lqc_smooth_1_modify_curve_drive"
     animation = unreal.load_asset(animation_path, unreal.AnimationAsset)
    
     # animation_track_names = animation.get_editor_property("animation_track_names")  # 注意用法

@@ -33,7 +33,7 @@ if __name__ == "__main__":
     unreal.log("start call")
     map_asset_path = r"/Game/Levels/my_map"
     sequencer_asset_path = r"/Game/Sequencer/MetaHumanSample_Sequence.MetaHumanSample_Sequence"
-    output_file = r"E:/UE4_project/AIFA_metahuman/Content/export_fbx"
+    output_file = r"E:/UE4_project/Content/export_fbx"
     sequence = unreal.load_asset(sequencer_asset_path, unreal.LevelSequence)
     all_tracks = []
     all_float_keys = []

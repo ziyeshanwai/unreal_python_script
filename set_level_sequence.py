@@ -5,7 +5,7 @@ import os
 
 if __name__ == "__main__":
     map_asset_path = r"/Game/Levels/my_map"
-    sequencer_asset_path = r"/Game/N_pv_test/level2/level2.level2"
+    sequencer_asset_path = r"/Game/level2/level2.level2"
     sequence = unreal.load_asset(sequencer_asset_path, unreal.LevelSequence)
     all_tracks = []
     all_float_keys = []
